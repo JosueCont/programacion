@@ -1,0 +1,67 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	int num=0,flag=0,num2=1,n=0,x=0;
+	float cali1=0.0,cali2=0.0;
+	
+			cout<<"1. Numero primo\n";
+			cout<<"2. Factorial\n";
+			cout<<"3. Promedio\n";
+			cout<<"0. Salir\n";
+			cout<<"Elige el numero:";
+			cin>>x;
+			cout<<"\n";
+		
+		if(x==1)
+		{
+			cout<<"Ingresa un numero entero:";
+			cin>>num;
+		
+			for(int i=1;i<(num+1);i++)
+				if(num%i==0)
+					flag++;
+		
+			if(flag==2)
+				cout<<"Es un numero primo";
+			else
+				cout<<"No es un numero primo";
+			cout<<"\n \n";
+		}
+		
+		if(x==2)
+		{
+			cout<<"Dame un numero:";
+	    	cin>>num;
+	
+	    	for(int i=2;i<=num;i++)
+	    	{
+	       		cout<<num2<<"x"<<i<<"="<<num2*i<<"\n";
+	       		num2*=i;
+	    	}
+	    	cout<<"\n";
+		}
+		
+	    if(x==3)
+	    {
+	    	do
+			{
+				cout<<"Dame la calificacion:";
+				cin>>cali1;
+				if(cali1>=0)
+				{
+					cout<<"Calificacion valida\n";
+					cali2+=cali1;
+					n++;
+				}
+				else
+					cout<<"Calificacion invalida\n";
+			}while(cali1>=0);
+		
+			cali2/=n;
+			cout<<"Tu promedio es:"<<cali2<<"\n \n";
+		}
+		return 0;
+}
