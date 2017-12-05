@@ -1,0 +1,75 @@
+#include<iostream>
+using namespace std;
+void llenarTabla(int mat[][6],int ven,int prod,int precio);
+void mostrar(int mat[][6]);
+void sumarP(int mat[][6]);
+void sumarVen(int mat[][6]);
+
+int main()
+{
+	int ven,prod,precio;
+	char op;
+	int mat[5][6]={{0}};
+	do
+	{
+		cout<<"Ingresa vendedor1-4:";
+		cin>>ven;
+		cout<<"ingresa producto1-5:";
+		cin>>prod;
+		cout<<"Ingresa $:";
+		cin>>precio;
+		cout<<"¿Deseas continuar S/N?:";
+		cin>>op;
+		if(ven>4||prod>5)
+			cout<<"No se puede llenar, intenta otra vez!!!!";
+		  else
+			llenarTabla(mat,ven,prod,precio);
+		
+	
+		
+	}while(op=='s');
+	sumarP(mat);
+	sumarVen(mat);
+	mostrar(mat);
+	
+
+	return 0;
+
+}
+
+void llenarTabla(int mat[][6],int ven,int prod,int precio)
+{
+	mat[ven-1][prod-1]+=precio;
+	 
+}
+
+void mostrar(int mat[][6])
+{
+	for(int r=0;r<5;r++)
+	{
+		cout<<endl;
+		for(int c=0;c<6;c++)
+		   cout<<"      "<<mat[r][c];
+	}
+}
+
+void sumarP(int mat[][6])
+{
+	for(int r=0;r<4;r++ )
+	{
+		for(int c=0;c<6;c++)
+		{
+		 mat[4][c]+=mat[r][c];
+		}
+		
+	}
+}
+
+void sumarVen(int mat[][6])
+{
+	for(int r=0;r<5;r++)
+	{
+		for(int c=0;c<5;c++)
+		 mat[r][5]+=mat[r][c];
+	}
+}
