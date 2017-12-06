@@ -1,0 +1,29 @@
+#include<iostream>
+#include<ctype.h>
+using namespace std;
+int cuentaPalabras(char c1[]);
+
+int main()
+{
+	char c1[100];
+	cin.getline(c1,100);
+	cout<<cuentaPalabras(c1);
+	
+	return 0;
+}
+
+int cuentaPalabras(char c1[])
+{
+	int palabras=0;
+
+	for(int c=1;c1[c]!='\0';c++)
+	{
+		if(c1[c-1]==' '&&isalpha(c1[c]))
+			palabras++;
+	}
+	if(isalpha(c1[0]))
+		palabras++;
+	return palabras;
+	
+	
+}
