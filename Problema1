@@ -1,0 +1,34 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+int longitud(char oracion[]);
+
+int main()
+{
+	int a;
+	char oracion[20];
+	char *tokenPtr;
+	int vec[15];
+	cin.getline(oracion,20,'\n');
+	tokenPtr=strtok(oracion," ");
+	while(tokenPtr!=NULL)
+		{
+			cout<<longitud(tokenPtr)<<'\n';
+			
+			//longitud(tokenPtr);
+			tokenPtr=strtok(NULL," ");
+		}
+	a=longitud(oracion);
+	if(a==1)
+	vec[0]++;
+	 
+	 cout<<"1 letra:"<<vec[0];
+	return 0;
+}
+
+int longitud(char oracion[])
+{
+	int c=0;
+	for(;oracion[c];c++);
+	return c;
+} 
