@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+void buscar(int vec[], int mat[4][2])
+{
+	int sizes = sizeof(mat) / sizeof(mat[0]);
+	int sizesvec = sizeof(vec);
+	for (int i = 0; i < sizes; ++i)
+	{
+		for (int j = 0; j <= sizesvec; ++j)
+		{
+			if(mat[i][0] == vec[j])
+				mat[i][1] = vec[j];
+			else
+				mat[i][1] = -1;
+		}
+	}
+}
+
+int main(){
+	int vect[] = {2, 3, 5, 6, 3, 1};
+	int matr[4][2] = {{1,0},{7,0},{5,0},{3,0}};
+	buscar(vect, matr);
+	for (int i = 0; i < 2; ++i)
+		{
+			for (int j = 0; j < 4; ++j)
+			{
+				cout << matr[i][j]; + ", ";
+			}
+		}	
+    cout << endl;
+	return 0;
+}
