@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int buscaPalabrasXTam(string str, int x){
+	int exist = 0;
+	int contlet = 0;
+
+	for(int c=0; c <= str.length(); c++)
+	{
+		if(str[c] == ' ' && contlet == x)
+			exist++;
+
+		if(str[c] != ' ') contlet++;
+		else contlet = 0;
+	}
+	return exist;
+}
+
+int main(){
+	string cadena;
+	int num;
+	cout << "cadena: "; getline(cin, cadena);
+	cadena += " ";
+	cout << "num de letras:"; cin >> num;
+	cout << buscaPalabrasXTam(cadena, num) << endl;
+	return 0;
+}
